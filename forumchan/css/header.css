@@ -1,0 +1,117 @@
+/* site */
+
+@font-face {
+	font-family: "EFNMacStyle8px";
+	src: url(../font/18076.ttf);
+}
+
+@font-face {
+	font-family: "WiGuru4";
+	src: url('../font/13217.ttf');
+}
+
+.main_block {
+	font-family: "EFNMacStyle8px";
+	width: inherit;
+	height: inherit;
+	font-size: 50px;
+	position: relative;
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 7;
+}
+
+.panel {
+	width: inherit;
+	padding: 5px 15px;
+	background-color: #000;
+	color: #fff;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	font-size: 40px;
+}
+
+a .logo {
+	color: #fff;
+}
+
+.user {
+	font-size: 20px;
+}
+
+.user a {
+	color: #fff;
+}
+
+.user a:hover {
+	color: seagreen;
+}
+
+#reg:hover {
+	color: brown;
+}
+
+.button {
+	display: none;
+}
+
+
+.search {
+	display: flex;
+	width: 100%;
+}
+
+.search .inp,
+.search .sub {
+	padding: 0px 5px;
+	display: flex;
+}
+
+.inp input {
+	height: 30px;
+	width: 300px;
+	border-radius: 4px;
+	padding-left: 10px;
+	font-size: 20px;
+}
+
+.sub input {
+	padding: 0px 10px;
+	border-radius: 4px;
+	background-color: #999;
+	font-size: 15px;
+	color: #fff;
+}
+
+.sub input:hover {
+	opacity: 0.9;
+}
+
+@media (max-width: 830px) {
+	.search {
+		display: none;
+	}
+	.logo {
+		font-size: 25px;
+	}
+	.panel {
+		padding: 15px 15px;
+	}
+	.user {
+		font-size: 15px;
+		padding-left: 20px;
+	}
+	.button {
+		display: block;
+	}
+}
