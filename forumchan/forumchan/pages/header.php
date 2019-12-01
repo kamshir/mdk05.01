@@ -12,11 +12,24 @@
 					</div>
 			</div>
 		</form>
-		<div class="user">
-			<a href="/forumchan/pages/enter.php" id="enter">Войти</a>
-			<strong>/</strong>
-			<a href="/forumchan/pages/reg.php" id="reg">Регистрация</a>
-		</div>
+		<?php 
+			if (isset($_SESSION['login'])){
+				echo '<div class="user">';
+				echo '<form action="/forumchan/pages/enter.php" method="POST">';
+				echo '<span class="login" title="Это вы">' . $_SESSION['login'] . '</span>';
+				echo '<label for="exit"><img class="exit" src="/forumchan/img/logout.svg" title="Выйти"></label>';
+				echo '<input type="submit" name="exit" id="exit">';
+				echo '</form>';
+				echo '</div>';
+			}
+			else {
+				echo '<div class="user">
+							<a href="/forumchan/pages/enter.php" id="enter">Войти</a>
+							<strong>/</strong>
+							<a href="/forumchan/pages/reg.php" id="reg">Регистрация</a>
+						</div>';
+			}
+		 ?>
 		<div class="button">
 			<button id='search' class="open">Найти</button>
 		</div>

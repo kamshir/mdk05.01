@@ -78,6 +78,20 @@ a .logo {
 	display: flex;
 }
 
+.exit {
+	width: 25px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+#exit {
+	display: none;
+}
+
+.login {
+	font-size: 25px;
+}
+
 .inp input {
 	height: 30px;
 	width: 300px;
