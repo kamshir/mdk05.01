@@ -1,4 +1,56 @@
-<!DOCTYPE>
+<?php 
+	session_start();
+	if (isset($_POST['exit'])){
+		session_destroy();
+		unset($_SESSION);
+	}
+	// Поключение к базе данных
+	$db = new mysqli('localhost', 'root', '', 'testphp');
+	if ($db->connenct_error){
+		die('Ошибка подключения!');
+	}
+	$db->set_charset("utf8");
+
+	$errors = array();
+	if (isset($_POST) && !empty($_POST)){
+		$var = $_POST;
+		if (isset($_POST['send'])){
+
+			if ($var['name'] == ''){
+				$errors[] = 'Введите логин!';
+			}
+
+			if ($var['password'] == ''){
+				$errors[] = 'Введите пароль!';
+			}
+
+			// database
+			$chk = $db->query("SELECT `login`, `password` FROM `users`");
+			$flag1 = false;
+			$flag2 = false;
+			// Проверка на наличие данных в базе
+			while ($row = $chk->fetch_assoc()){
+				if ($row['login'] == $var['name']) $flag1 = true;
+				if ($row['password'] == md5($var['password'])) $flag2 = true;
+			}
+
+			if (!$flag1 && $var['name'] != '') $errors[] = 'Пользователь не найден!';
+			if (!$flag2 && $var['password'] != '') $errors[] = 'Пароль неверный!';
+
+			// Успешный вход на сайт
+			if (empty($errors) && isset($_POST['send'])){
+				$_SESSION['login'] = $var['name'];
+				$_SESSION['email'] = $var['email'];
+				echo "<title>Успешный вход</title>";
+				echo '<link rel="icon" href="/forumchan/img/Forumchan.png">';
+				echo '<h3 class="success" style="text-align: center;color: seagreen;">Вы успешно авторизованы! Можете перейти на сайт.</h3>';
+				die('<div style="display: flex; justify-content: center;"><a href="../index.php" style="color: #fff; text-align: center; text-decoration: none; padding: 10px 15px; border-radius: 5px; background-color: seagreen;">Перейти на сайт</a></div>');
+			}
+		}
+	}
+ ?>
+
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -23,15 +75,23 @@
 
 		<div class="block_form">
 			<div class="form">
+				<p class="error">
+					<?php 
+						// Выводится первая ошибка из массива
+						if (!empty($errors) && isset($_POST['send'])) {
+							echo array_shift($errors);
+						}
+					 ?>
+				</p>
 				<h1 class="ttl">Авторизация</h1>
-				<form action="" id="form">
+				<form action="enter.php" id="form" method="POST">
 					<div class="inp">
 						<p class="holder">Логин:</p>
-						<input type="text" name="name" placeholder="Логин, почта">
+						<input type="text" name="name" placeholder="Логин, почта"  value="<?php if (isset($_POST['name'])) echo $_POST['name']; ?>">
 					</div>
 					<div class="inp">
 						<p class="holder">Пароль:</p>
-						<input type="password" name="password" placeholder="Ваш пароль">
+						<input type="password" name="password" placeholder="Ваш пароль"  value="<?php if (isset($_POST['password'])) echo $_POST['password']; ?>">
 					</div>
 					<div class="sub">
 						<input type="submit" name='send' value='Войти' id='send'>

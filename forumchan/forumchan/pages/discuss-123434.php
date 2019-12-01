@@ -1,8 +1,8 @@
-<?php
+<?php 
 	session_start();
-?>
+ ?>
 
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -70,7 +70,7 @@
 				</div>
 			</div>
 			<?php
-				if (isset($_SESSION)){
+				if (isset($_SESSION['login'])){
 					echo '<div class="addComment">
 								<p class="ttl">Комментировать</p>
 								<form action="">
