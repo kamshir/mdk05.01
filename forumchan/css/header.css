@@ -16,6 +16,7 @@
 	height: inherit;
 	font-size: 50px;
 	position: relative;
+	padding-top: 50px;
 }
 
 .header {
@@ -77,6 +78,34 @@ a .logo {
 	display: flex;
 }
 
+.exit {
+	width: 25px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+#exit {
+	display: none;
+}
+
+.login {
+	font-size: 25px;
+}
+
+.flag {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+}
+
+.active {
+	background-color: seagreen;
+}
+
+.blocked {
+	background-color: brown;
+}
+
 .inp input {
 	height: 30px;
 	width: 300px;
@@ -88,17 +117,48 @@ a .logo {
 .sub input {
 	padding: 0px 10px;
 	border-radius: 4px;
-	background-color: #999;
+	background-color: silver;
 	font-size: 15px;
 	color: #fff;
 }
 
 .sub input:hover {
+	transition: all 0.1s ease 0s;
+ 	-webkit-transition: all 0.1s ease 0s;
+ 	-moz-transition: all 0.1s ease 0s;
+ 	-ms-transition: all 0.1s ease 0s;
+ 	-o-transition: all 0.1s ease 0s;	 
+	background-color: seagreen;
 	opacity: 0.9;
+	cursor: pointer;
+}
+
+.sub input:focus {
+	cursor: progress;
+}
+
+.mon_search {
+	transition: all 0.7s ease 0s;
+}
+
+.mon_search * {
+	display: none;
+}
+
+.mon_search__active {
+	width: 100%;
+	padding: 10px;
+	background-color: #111;
+	transform: translateY(-100%) rotateX(90deg);
+	z-index: -1;
+}
+
+.mon_search__active * {
+	display: block;
 }
 
 @media (max-width: 830px) {
-	.search {
+	.desk {
 		display: none;
 	}
 	.logo {
@@ -112,6 +172,30 @@ a .logo {
 		padding-left: 20px;
 	}
 	.button {
-		display: block;
+		display: flex;
+		align-items: center;
+	}
+	.open {
+		background-color: seagreen;
+	}
+	#search {
+		padding: 5px 10px;
+		color: #fff;
+	}
+	#search img {
+		width: 20px;
+	}
+	.mon_search {
+		transform: rotateX(0deg);
+	}
+	.mob {
+		display: flex;
+		justify-content: center;
+	}
+	.inp, .inp input {
+		width: 100%;
+	}
+	.find {
+		background-color: brown;
 	}
 }

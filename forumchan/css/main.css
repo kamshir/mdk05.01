@@ -1,0 +1,76 @@
+.flag {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+
+.active {
+	background-color: seagreen;
+}
+
+.blocked {
+	background-color: brown;
+}
+
+.dont .text .zagol {
+	color: #999;
+}
+
+.dont:hover {
+	background-color: transparent;
+}
+
+.author {
+	font-size: 20px;
+	color: #999;
+}
+
+.name {
+	text-transform: capitalize;
+	font-size: 19px;
+	color: #2e133e;
+}
+
+.last_mess {
+	font-size: 17px;
+	align-self: center;
+	display: flex;
+	align-items: center;
+}
+
+.icon {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	background-color: #000;
+	margin-left: 10px;
+	color: #ffffff;
+	text-transform: capitalize;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 17px;
+}
+
+.time {
+	line-height: 15px;
+}
+
+.bld {
+	font-size: 12px;
+}
+
+/*search*/
+
+.what_find {
+	font-size: 35px;
+}
+
+.key {
+	padding-left: 10px;
+	color: brown;
+	text-decoration: underline;
+}

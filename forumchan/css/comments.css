@@ -1,3 +1,13 @@
+@font-face {
+	font-family: "GoodDog";
+	src: url(../font/18341.ttf);
+}
+
+@font-face {
+	font-family: "Lato";
+	src: url(../font/9622.ttf);
+}
+
 .box_discuss {
 	width: 100%;
 	padding-top: 100px;
@@ -16,7 +26,7 @@
 	color: #000;
 }
 
-.disc {
+.disc a {
 	font-size: 40px;
 	color: #900;
 }
@@ -32,12 +42,24 @@
 .comment {
 	width: inherit;
 	margin-top: 20px;
+	padding: 10px;
+	position: relative;
+}
+
+.theme {
+	margin: 10px 0px;
+}
+
+.text_theme {
+	font-family: "Lato";
+	font-weight: 500;
+	font-size: 30px;
 }
 
 .who {
 	display: flex;
 	align-items: center;
-	font-size: 30px;
+	font-size: 28px;
 }
 
 .name {
@@ -46,6 +68,7 @@
 
 .time {
 	color: #999;
+	font-size: 25px;
 }
 
 .data {
@@ -62,27 +85,32 @@
 	justify-content: center;
 	align-items: center;
 	font-size: 20px;
-}
-
-.cmnt {
-	margin-top: 10px;
+	text-transform: capitalize;
 }
 
 .cmnt .text {
 	color: #000;
-	font-size: 25px;
+	font-size: 23px;
 }
 
 .txt {
-	width: 600px;
+	width: 500px;
+	position: relative;
+}
+
+#file {
+	display: none;
 }
 
 #text {
+	height: 140px;
 	border: 1px solid;
 	border-radius: 5px;
 	width: 100%;
+	font-size: 20px;
 	padding-left: 10px;
 	padding-top: 5px;
+	resize: none;
 }
 
 .addComment {
@@ -109,11 +137,118 @@
 	padding-left: 25px;
 }
 
+.pagination {
+	width: inherit;
+	padding: 10px 0px 0px 0px;
+	display: flex;
+	justify-content: center;
+}
+
+.punct {
+	font-size: 25px;
+	margin: 10px;
+	padding: 5px 5px;
+	border-radius: 4px;
+	color: #666;
+}
+
+.now {
+	color: #fff;
+	background-color: #000;
+}
+
+.theme_mess {
+	border-bottom: 2px solid #999;
+	width: 100%;
+	padding: 10px 0px 10px 10px;
+	font-size: 25px;
+}
+
+.tools {
+	position: absolute;
+	right: 15px;
+	bottom: 50%;
+	transform: translateY(50%);
+	transition: all 0.5s ease 0s;
+	cursor: pointer;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.tool {
+	width: 20px;
+	margin: 10px 0px;
+	filter: opacity(0.1);
+}
+
+.attach {
+	width: 30px;
+	filter: opacity(0.4);
+}
+
+.val {
+	font-size: 20px;
+	padding-left: 10px;
+}
+
+.file {
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	width: 200px;
+	margin-top: 10px;
+}
+
+.file:hover .download {
+	filter: opacity(1);
+}
+
+.download {
+	margin-left: 10px;
+	width: 15px;
+}
+
+.lbl {
+	display: flex;
+	align-items: center;
+}
+
+.tool:hover {
+	filter: opacity(1);
+}
+
+.edit_comnt {
+	padding-left: 10px;
+}
+
+.edit_comnt .txt {
+	margin-top: 10px;
+}
+
 @media (max-width: 680px) {
 	.txt {
 		width: 100%;
 	}
 	.box_discuss {
-		padding-left: 10px;
+		padding-left: 15px;
+	}
+	.sub {
+		display: flex;
+		justify-content: center;
+	}
+	.name {
+		font-size: 25px;
+	}
+	.ava {
+		width: 20px;
+		height: 20px;
+		font-size: 15px;
+	}
+	.time {
+		font-size: 20px;
+	}
+	.cmnt .text {
+		font-size: 20px;
 	}
 }

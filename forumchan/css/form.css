@@ -20,17 +20,23 @@
 .holder {
 	color: #555;
 	font-size: 25px;
-	margin-bottom: 5px;
+	margin-top: 10px;
 }
 
 .inp {
-	margin-top: 10px;
+	margin-top: 5px;
+}
+
+.inp input {
+	margin: 0;
+	padding: 20px 0px 20px 10px;
 }
 
 .sub {
 	margin-top: 15px;
 	display: flex;
-	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 #send {
@@ -68,7 +74,7 @@
 	color: #444;
 	width: 200px;
 	user-select: none;
-
+	z-index: 1;
 }
 
 #reg {
@@ -82,4 +88,45 @@
 #reg:hover {
 	background-color: brown;
 	color: #fff;
+}
+
+.anway {
+	margin-top: 10px;
+}
+
+.anway a {
+	font-size: 20px;
+	color: brown;
+}
+
+.enter a {
+	color: seagreen;
+}
+
+.rules {
+	color: #999;
+	z-index: 100;
+}
+
+.rules:hover {
+	text-decoration: underline;
+	color: #000;
+	cursor: pointer;
+}
+
+.error {
+	font-size: 20px;
+	text-align: center;
+	color: brown;
+}
+
+.important {
+	position: relative;
+}
+
+.important::after {
+	content: '*';
+	position: absolute;
+	color: red;
+	top: 5px;
 }

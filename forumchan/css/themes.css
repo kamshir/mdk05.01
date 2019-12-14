@@ -44,7 +44,6 @@
 .recently {
 	display: flex;
 	align-items: center;
-	font-size: 18px;
 }
 
 .who {
@@ -168,6 +167,7 @@
 	padding: 10px 10px;
 	border-radius: 10px;
 	position: relative;
+	width: 100%;
 }
 
 .theme:hover {
@@ -182,6 +182,11 @@
 
 .ser {
 	color: #000;
+	width: 100%;
+	height: 100px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
 }
 
 .pagination {
@@ -191,47 +196,66 @@
 	display: flex;
 	justify-content: center;
 }
-.puncts {
-	display: flex;
-	align-items: center;
-}
 
 .punct {
-	font-size: 30px;
+	font-size: 25px;
 	margin: 10px;
 	padding: 5px 5px;
 	border-radius: 4px;
-}
-
-.punct a {
 	color: #666;
-}
-
-.punct a:hover {
-	color: #666;
-	text-decoration: underline;
-}
-
-.punct a:active {
-	color: #111;
-	text-decoration: underline;
 }
 
 .now {
+	color: #fff;
 	background-color: #000;
 }
 
-.now a {
-	color: #fff;
-}
-
-.now:active {
-	background-color: #111;
-}
 
 
 @media (max-width: 830px) {
 	.block__themes {
 		padding: 10px 20px;
+	}
+}
+
+@media (max-width: 715px) {
+	.zagol {
+		font-size: 20px;
+	}
+	.nadtext {
+		font-size: 15px;
+		max-width: 150px;
+	}
+	.last {
+		font-size: 12px;
+	}
+	.name {
+		font-size: 20px;
+	}
+	.time {
+		font-size: 10px;
+	}
+	.answers {
+		font-size: 14px;
+	}
+	.ava {
+		width: 30px;
+		height: 30px;
+		font-size: 15px;
+	}
+	.last_news {
+		font-size: 15px;
+	}
+	.ttl {
+		font-size: 30px;
+	}
+	.theme {
+		align-items: center;
+	}
+	.ser {
+		font-size: 20px;
+	}
+	.punct {
+		font-size: 20px;
 	}
 }
